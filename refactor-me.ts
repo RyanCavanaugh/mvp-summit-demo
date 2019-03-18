@@ -40,7 +40,27 @@ function tooManyParams(
 tooManyParams("alice", 40);
 
 
-//////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 declare function delay(n: number): Promise<void>;
@@ -51,6 +71,7 @@ function thenthenthenthenthen() {
         .then(() => { console.log("1"); return delay(500); })
         .then(() => { console.log("2"); return delay(500); })
         .then(() => { console.log("3"); return delay(500); })
+        .catch(() => console.error("Something went wrong!"));
 }
 
 
@@ -66,7 +87,13 @@ function thenthenthenthenthen() {
 
 
 
+/**
+ * Does a very important thing
+ * 
+ * @param wat a parameter you pass in
+ */
 function mystery(wat) {
+    console.log(JSON.stringify(wat));
 }
 
 mystery("");
@@ -74,6 +101,14 @@ mystery(10);
 mystery(true);
 
 
+
+
+
+function mystery2(x) {
+
+}
+mystery2({ name: "hello", length: 5 });
+mystery2({ length: 10 });
 
 
 
